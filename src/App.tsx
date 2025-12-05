@@ -1,13 +1,14 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   BarChart3,
-  Box,
   ShieldCheck,
   Users,
   Zap,
   ArrowRight,
-  CheckCircle2,
   Play,
+  QrCode,
+  Bell,
+  Globe,
+  Smartphone,
 } from "lucide-react";
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
             </a>
             <a
               href={`${MAIN_APP_URL}/login`}
-              className="px-4 py-2 text-sm font-medium rounded-md bg-cyan-500 text-black hover:bg-cyan-400 transition-all"
+              className="gradient-border-btn-animated"
             >
               Get Started
             </a>
@@ -153,49 +154,171 @@ function App() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" className="py-20 bg-muted/30">
+      <section id="features" className="py-24 relative">
+        {/* Background accent */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+        </div>
+
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Everything you need
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+              <span className="text-sm text-cyan-400 font-medium">
+                Features
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Everything you need to
+              <span className="block bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                manage inventory
+              </span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive tools to manage your inventory efficiently and
-              effectively.
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Powerful features designed to streamline your operations and boost
+              productivity.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Zap className="h-6 w-6 text-yellow-500" />}
               title="Real-time Tracking"
-              description="Monitor stock levels in real-time across multiple locations with instant updates."
+              description="Monitor stock levels instantly across all locations."
+              gradient="from-yellow-500/20 to-orange-500/20"
             />
             <FeatureCard
               icon={<BarChart3 className="h-6 w-6 text-cyan-400" />}
               title="Advanced Analytics"
-              description="Gain insights with detailed reports, trends, and forecasting tools."
+              description="Detailed reports, trends, and forecasting tools."
+              gradient="from-cyan-500/20 to-blue-500/20"
             />
             <FeatureCard
-              icon={<Users className="h-6 w-6 text-green-500" />}
+              icon={<QrCode className="h-6 w-6 text-green-500" />}
+              title="QR Code Scanning"
+              description="Quickly scan and manage items with QR codes."
+              gradient="from-green-500/20 to-emerald-500/20"
+            />
+            <FeatureCard
+              icon={<Users className="h-6 w-6 text-purple-500" />}
               title="Team Collaboration"
-              description="Manage user roles and permissions to keep your team synchronized."
+              description="Manage roles and keep your team synchronized."
+              gradient="from-purple-500/20 to-pink-500/20"
             />
             <FeatureCard
-              icon={<ShieldCheck className="h-6 w-6 text-purple-500" />}
-              title="Secure & Reliable"
-              description="Enterprise-grade security with daily backups and 99.9% uptime."
+              icon={<ShieldCheck className="h-6 w-6 text-blue-500" />}
+              title="Enterprise Security"
+              description="SOC 2 compliant with end-to-end encryption."
+              gradient="from-blue-500/20 to-indigo-500/20"
             />
             <FeatureCard
-              icon={<Box className="h-6 w-6 text-orange-500" />}
-              title="Barcode Scanning"
-              description="Quickly add and update items using our integrated barcode scanner."
+              icon={<Bell className="h-6 w-6 text-red-500" />}
+              title="Smart Alerts"
+              description="Get notified on low stock and critical events."
+              gradient="from-red-500/20 to-rose-500/20"
             />
             <FeatureCard
-              icon={<CheckCircle2 className="h-6 w-6 text-cyan-400" />}
-              title="Audit Trails"
-              description="Keep track of every change with detailed activity logs and history."
+              icon={<Globe className="h-6 w-6 text-teal-500" />}
+              title="Multi-location"
+              description="Manage inventory across warehouses globally."
+              gradient="from-teal-500/20 to-cyan-500/20"
             />
+            <FeatureCard
+              icon={<Smartphone className="h-6 w-6 text-orange-500" />}
+              title="Mobile Ready"
+              description="Access your inventory from any device, anywhere."
+              gradient="from-orange-500/20 to-amber-500/20"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 relative">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+                <span className="text-sm text-purple-400 font-medium">
+                  About Us
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                Built by experts,
+                <span className="block bg-gradient-to-r from-purple-400 to-cyan-500 bg-clip-text text-transparent">
+                  trusted by thousands
+                </span>
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                We started InventoryManager with a simple mission: make
+                inventory management effortless for businesses of all sizes. Our
+                team combines decades of supply chain expertise with
+                cutting-edge technology.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">2019</div>
+                  <div className="text-gray-400 text-sm">Founded</div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">50+</div>
+                  <div className="text-gray-400 text-sm">Team Members</div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">20+</div>
+                  <div className="text-gray-400 text-sm">Countries</div>
+                </div>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div className="text-3xl font-bold text-white mb-1">$2M+</div>
+                  <div className="text-gray-400 text-sm">Saved for Clients</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side - Values */}
+            <div className="space-y-6">
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-white/10">
+                <div className="h-12 w-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
+                  <Zap className="h-6 w-6 text-cyan-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Innovation First
+                </h3>
+                <p className="text-gray-400">
+                  We continuously push boundaries with AI-powered insights,
+                  real-time analytics, and intuitive interfaces that make
+                  complex tasks simple.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-white/10">
+                <div className="h-12 w-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Customer Success
+                </h3>
+                <p className="text-gray-400">
+                  Our dedicated support team is available 24/7. We don't just
+                  provide software—we partner with you to ensure your success.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-white/10">
+                <div className="h-12 w-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
+                  <ShieldCheck className="h-6 w-6 text-green-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  Trust & Security
+                </h3>
+                <p className="text-gray-400">
+                  Your data security is our top priority. We're SOC 2 certified
+                  and use enterprise-grade encryption for all your information.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -226,23 +349,23 @@ function FeatureCard({
   icon,
   title,
   description,
+  gradient = "from-white/5 to-white/10",
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
+  gradient?: string;
 }) {
   return (
-    <Card className="border border-border bg-card/50 backdrop-blur-sm hover:bg-card/80 transition-colors">
-      <CardHeader>
-        <div className="h-12 w-12 rounded-lg bg-muted flex items-center justify-center mb-4">
-          {icon}
-        </div>
-        <CardTitle className="text-xl">{title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-muted-foreground leading-relaxed">{description}</p>
-      </CardContent>
-    </Card>
+    <div
+      className={`relative group p-6 rounded-2xl bg-gradient-to-br ${gradient} border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1`}
+    >
+      <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        {icon}
+      </div>
+      <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+      <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+    </div>
   );
 }
 
