@@ -27,6 +27,7 @@ import {
 function App() {
   // Use relative URLs or configure for production
   const APP_URL = "/login";
+  const STRIPE_TRIAL_URL = "https://buy.stripe.com/test_9B6bJ17TWa5b6QY2jQaR200";
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden scroll-smooth">
@@ -94,7 +95,7 @@ function App() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                 </span>
                 <span className="text-sm text-gray-300">
-                  Free 14-day trial • No credit card required
+                  Free 15-day trial • No credit card required
                 </span>
                 <ArrowRight className="h-4 w-4 text-gray-400 group-hover:translate-x-0.5 transition-transform" />
               </a>
@@ -114,7 +115,7 @@ function App() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <a href={APP_URL} className="gradient-border-btn gap-2">
+                <a href={STRIPE_TRIAL_URL} className="gradient-border-btn gap-2" target="_blank" rel="noopener noreferrer">
                   Start Free Trial <ArrowRight className="h-5 w-5" />
                 </a>
                 <a href="#" className="gradient-border-btn gap-2">
