@@ -35,24 +35,24 @@ function App() {
               >
                 Features
               </a>
-              <a
-                href="#pricing"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Pricing
-              </a>
+              {/* <a */}
+              {/*   href="#pricing" */}
+              {/*   className="text-muted-foreground hover:text-foreground transition-colors" */}
+              {/* > */}
+              {/*   Pricing */}
+              {/* </a> */}
               <a
                 href="#about"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 About
               </a>
-              <a
-                href="#contact"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-              >
-                Contact
-              </a>
+              {/* <a */}
+              {/*   href="#contact" */}
+              {/*   className="text-muted-foreground hover:text-foreground transition-colors" */}
+              {/* > */}
+              {/*   Contact */}
+              {/* </a> */}
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -154,80 +154,125 @@ function App() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" className="py-24 relative">
-        {/* Background accent */}
+      <section id="features" className="py-24 relative overflow-hidden">
+        {/* Background effects */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[120px]" />
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+              </span>
               <span className="text-sm text-cyan-400 font-medium">
-                Features
+                Powerful Features
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
               Everything you need to
-              <span className="block bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 manage inventory
               </span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              Powerful features designed to streamline your operations and boost
-              productivity.
+            <p className="text-gray-400 max-w-xl mx-auto text-lg">
+              Streamline operations with our comprehensive toolkit designed for
+              modern businesses.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Bento Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px]">
+            {/* Featured Card - Spans 2 columns */}
+            <div className="md:col-span-2 md:row-span-2 relative group p-8 rounded-3xl bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-500" />
+              <div className="relative z-10">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/25">
+                  <BarChart3 className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  Advanced Analytics
+                </h3>
+                <p className="text-gray-400 text-base leading-relaxed max-w-md">
+                  Unlock powerful insights with real-time dashboards, trend
+                  analysis, and AI-powered forecasting to make data-driven
+                  decisions.
+                </p>
+                <div className="mt-6 flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-500/50" />
+                    <div className="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/50" />
+                    <div className="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-500/50" />
+                  </div>
+                  <span className="text-sm text-gray-500">
+                    Used by 500+ teams
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Regular Cards */}
             <FeatureCard
-              icon={<Zap className="h-6 w-6 text-yellow-500" />}
+              icon={<Zap className="h-6 w-6 text-yellow-400" />}
               title="Real-time Tracking"
               description="Monitor stock levels instantly across all locations."
-              gradient="from-yellow-500/20 to-orange-500/20"
+              gradient="from-yellow-500/20 via-yellow-500/10 to-transparent"
+              iconBg="from-yellow-500 to-orange-500"
             />
             <FeatureCard
-              icon={<BarChart3 className="h-6 w-6 text-cyan-400" />}
-              title="Advanced Analytics"
-              description="Detailed reports, trends, and forecasting tools."
-              gradient="from-cyan-500/20 to-blue-500/20"
-            />
-            <FeatureCard
-              icon={<QrCode className="h-6 w-6 text-green-500" />}
+              icon={<QrCode className="h-6 w-6 text-green-400" />}
               title="QR Code Scanning"
               description="Quickly scan and manage items with QR codes."
-              gradient="from-green-500/20 to-emerald-500/20"
+              gradient="from-green-500/20 via-green-500/10 to-transparent"
+              iconBg="from-green-500 to-emerald-500"
             />
             <FeatureCard
-              icon={<Users className="h-6 w-6 text-purple-500" />}
+              icon={<Users className="h-6 w-6 text-purple-400" />}
               title="Team Collaboration"
               description="Manage roles and keep your team synchronized."
-              gradient="from-purple-500/20 to-pink-500/20"
+              gradient="from-purple-500/20 via-purple-500/10 to-transparent"
+              iconBg="from-purple-500 to-pink-500"
             />
             <FeatureCard
-              icon={<ShieldCheck className="h-6 w-6 text-blue-500" />}
+              icon={<ShieldCheck className="h-6 w-6 text-blue-400" />}
               title="Enterprise Security"
               description="SOC 2 compliant with end-to-end encryption."
-              gradient="from-blue-500/20 to-indigo-500/20"
+              gradient="from-blue-500/20 via-blue-500/10 to-transparent"
+              iconBg="from-blue-500 to-indigo-500"
             />
+
+            {/* Wide Card - Spans 2 columns */}
+            <div className="md:col-span-2 relative group p-6 rounded-3xl bg-gradient-to-r from-purple-500/10 via-pink-500/5 to-transparent border border-white/10 hover:border-purple-500/30 transition-all duration-500 overflow-hidden flex items-center gap-6">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/25 shrink-0">
+                <Bell className="h-7 w-7 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">
+                  Smart Alerts & Notifications
+                </h3>
+                <p className="text-gray-400">
+                  Get instant notifications for low stock, expiring items, and
+                  critical inventory events across all channels.
+                </p>
+              </div>
+            </div>
+
             <FeatureCard
-              icon={<Bell className="h-6 w-6 text-red-500" />}
-              title="Smart Alerts"
-              description="Get notified on low stock and critical events."
-              gradient="from-red-500/20 to-rose-500/20"
-            />
-            <FeatureCard
-              icon={<Globe className="h-6 w-6 text-teal-500" />}
+              icon={<Globe className="h-6 w-6 text-teal-400" />}
               title="Multi-location"
               description="Manage inventory across warehouses globally."
-              gradient="from-teal-500/20 to-cyan-500/20"
+              gradient="from-teal-500/20 via-teal-500/10 to-transparent"
+              iconBg="from-teal-500 to-cyan-500"
             />
             <FeatureCard
-              icon={<Smartphone className="h-6 w-6 text-orange-500" />}
+              icon={<Smartphone className="h-6 w-6 text-orange-400" />}
               title="Mobile Ready"
               description="Access your inventory from any device, anywhere."
-              gradient="from-orange-500/20 to-amber-500/20"
+              gradient="from-orange-500/20 via-orange-500/10 to-transparent"
+              iconBg="from-orange-500 to-amber-500"
             />
           </div>
         </div>

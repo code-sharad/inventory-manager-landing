@@ -74,6 +74,90 @@
   }
 }
 
+/* Feature Card Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(250, 204, 21, 0.6); }
+}
+
+@keyframes scan-line {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+@keyframes float-avatars {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes shield-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes globe-spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes phone-vibrate {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes bell-ring {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(15deg); }
+  20%, 40% { transform: rotate(-15deg); }
+  50% { transform: rotate(0deg); }
+}
+
+@keyframes chart-grow {
+  0% { transform: scaleY(0.7); }
+  50% { transform: scaleY(1.1); }
+  100% { transform: scaleY(1); }
+}
+
+/* Feature card hover animations */
+.feature-card-realtime:hover .feature-icon {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+.feature-card-qr:hover .feature-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #22c55e, transparent);
+  animation: scan-line 1s linear infinite;
+}
+
+.feature-card-team:hover .feature-icon {
+  animation: float-avatars 1s ease-in-out infinite;
+}
+
+.feature-card-security:hover .feature-icon {
+  animation: shield-pulse 0.8s ease-in-out infinite;
+}
+
+.feature-card-globe:hover .feature-icon {
+  animation: globe-spin 3s linear infinite;
+}
+
+.feature-card-mobile:hover .feature-icon {
+  animation: phone-vibrate 0.3s ease-in-out infinite;
+}
+
+.feature-card-alerts:hover .feature-icon {
+  animation: bell-ring 1s ease-in-out infinite;
+}
+
+.feature-card-analytics:hover .feature-icon {
+  animation: chart-grow 0.5s ease-out forwards;
+}
+
 /* Gradient Border Button - Base styles */
 @keyframes rotate-gradient {
   0% {
