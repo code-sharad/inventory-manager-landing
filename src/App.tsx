@@ -28,7 +28,8 @@ import {
 } from "lucide-react";
 
 function App() {
-  const MAIN_APP_URL = "http://localhost:5000";
+  // Use relative URLs or configure for production
+  const APP_URL = "/login";
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden scroll-smooth">
@@ -61,15 +62,12 @@ function App() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href={`${MAIN_APP_URL}/login`}
+              href={APP_URL}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Log in
             </a>
-            <a
-              href={`${MAIN_APP_URL}/login`}
-              className="gradient-border-btn-animated"
-            >
+            <a href={APP_URL} className="gradient-border-btn-animated">
               Get Started
             </a>
           </div>
@@ -113,14 +111,13 @@ function App() {
               </h1>
 
               <p className="text-lg text-muted-foreground max-w-xl mb-10">
-                Powerful inventory management with QR code tracking, real-time analytics, and seamless team collaboration. Know exactly what you have and where it is.
+                Powerful inventory management with QR code tracking, real-time
+                analytics, and seamless team collaboration. Know exactly what
+                you have and where it is.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                <a
-                  href={`${MAIN_APP_URL}/login`}
-                  className="gradient-border-btn gap-2"
-                >
+                <a href={APP_URL} className="gradient-border-btn gap-2">
                   Start Free Trial <ArrowRight className="h-5 w-5" />
                 </a>
                 <a href="#" className="gradient-border-btn gap-2">
@@ -157,8 +154,12 @@ function App() {
                         <Package className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white">Inventory Dashboard</h3>
-                        <p className="text-xs text-gray-400">Real-time overview</p>
+                        <h3 className="font-semibold text-white">
+                          Inventory Dashboard
+                        </h3>
+                        <p className="text-xs text-gray-400">
+                          Real-time overview
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -195,7 +196,9 @@ function App() {
                   </div>
 
                   <div className="space-y-3">
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">Recent Activity</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wider">
+                      Recent Activity
+                    </div>
 
                     <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card">
                       <div className="h-10 w-10 rounded-lg bg-cyan-500/20 flex items-center justify-center relative overflow-hidden">
@@ -203,8 +206,12 @@ function App() {
                         <div className="absolute inset-0 bg-gradient-to-b from-cyan-400/0 via-cyan-400/30 to-cyan-400/0 animate-scan-line" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-white text-sm">MacBook Pro M3</div>
-                        <div className="text-xs text-gray-400">Scanned just now</div>
+                        <div className="font-medium text-white text-sm">
+                          MacBook Pro M3
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Scanned just now
+                        </div>
                       </div>
                       <div className="flex items-center gap-1 text-xs text-green-400">
                         <CheckCircle2 className="h-3 w-3" />
@@ -217,8 +224,12 @@ function App() {
                         <Box className="h-5 w-5 text-purple-400" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-white text-sm">Office Supplies Kit</div>
-                        <div className="text-xs text-gray-400">Updated 2 min ago</div>
+                        <div className="font-medium text-white text-sm">
+                          Office Supplies Kit
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Updated 2 min ago
+                        </div>
                       </div>
                       <div className="flex items-center gap-1 text-xs text-yellow-400">
                         <AlertTriangle className="h-3 w-3" />
@@ -231,8 +242,12 @@ function App() {
                         <Tag className="h-5 w-5 text-pink-400" />
                       </div>
                       <div className="flex-1">
-                        <div className="font-medium text-white text-sm">Server Rack #12</div>
-                        <div className="text-xs text-gray-400">Moved to Warehouse B</div>
+                        <div className="font-medium text-white text-sm">
+                          Server Rack #12
+                        </div>
+                        <div className="text-xs text-gray-400">
+                          Moved to Warehouse B
+                        </div>
                       </div>
                       <div className="flex items-center gap-1 text-xs text-cyan-400">
                         <MapPin className="h-3 w-3" />
@@ -249,8 +264,12 @@ function App() {
                       <div className="absolute inset-0 bg-white/20 animate-pulse" />
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-white">Quick Scan</div>
-                      <div className="text-xs text-green-400">Ready to scan</div>
+                      <div className="text-sm font-medium text-white">
+                        Quick Scan
+                      </div>
+                      <div className="text-xs text-green-400">
+                        Ready to scan
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -261,8 +280,12 @@ function App() {
                       <Bell className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <div className="text-sm font-medium text-white">Low Stock Alert</div>
-                      <div className="text-xs text-yellow-400">3 items need reorder</div>
+                      <div className="text-sm font-medium text-white">
+                        Low Stock Alert
+                      </div>
+                      <div className="text-xs text-yellow-400">
+                        3 items need reorder
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -270,7 +293,9 @@ function App() {
                 <div className="absolute right-4 -top-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full px-4 py-2 shadow-lg animate-bounce-slow hidden lg:block">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="h-4 w-4 text-white" />
-                    <span className="text-sm font-semibold text-white">+24% efficiency</span>
+                    <span className="text-sm font-semibold text-white">
+                      +24% efficiency
+                    </span>
                   </div>
                 </div>
               </div>
@@ -354,12 +379,20 @@ function App() {
                   Label Designer
                 </h3>
                 <p className="text-gray-400 text-base leading-relaxed max-w-md">
-                  Create custom labels with our drag-and-drop designer. Add QR codes, barcodes, text, and logos with precise positioning. Save templates for reuse.
+                  Create custom labels with our drag-and-drop designer. Add QR
+                  codes, barcodes, text, and logos with precise positioning.
+                  Save templates for reuse.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs">Drag & Drop</span>
-                  <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs">QR & Barcode</span>
-                  <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs">Templates</span>
+                  <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs">
+                    Drag & Drop
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs">
+                    QR & Barcode
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs">
+                    Templates
+                  </span>
                 </div>
               </div>
             </div>
@@ -402,7 +435,8 @@ function App() {
                   Guided Workflow Builder
                 </h3>
                 <p className="text-gray-400">
-                  Create step-by-step data entry workflows with conditional branching. Perfect for complex item types.
+                  Create step-by-step data entry workflows with conditional
+                  branching. Perfect for complex item types.
                 </p>
               </div>
             </div>
@@ -431,12 +465,17 @@ function App() {
                   Multi-Tenant & Secure
                 </h3>
                 <p className="text-gray-400">
-                  Complete data isolation per organization. Subdomain routing, API key management, and enterprise-grade security.
+                  Complete data isolation per organization. Subdomain routing,
+                  API key management, and enterprise-grade security.
                 </p>
               </div>
               <div className="hidden sm:flex items-center gap-2">
-                <div className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">Isolated Data</div>
-                <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs">API Access</div>
+                <div className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">
+                  Isolated Data
+                </div>
+                <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs">
+                  API Access
+                </div>
               </div>
             </div>
 
@@ -507,7 +546,8 @@ function App() {
                   Innovation First
                 </h3>
                 <p className="text-gray-400">
-                  We continuously push boundaries with powerful features and intuitive interfaces.
+                  We continuously push boundaries with powerful features and
+                  intuitive interfaces.
                 </p>
               </div>
 
@@ -519,7 +559,8 @@ function App() {
                   Customer Success
                 </h3>
                 <p className="text-gray-400">
-                  Our dedicated support team is available 24/7 to ensure your success.
+                  Our dedicated support team is available 24/7 to ensure your
+                  success.
                 </p>
               </div>
 
@@ -531,7 +572,8 @@ function App() {
                   Trust & Security
                 </h3>
                 <p className="text-gray-400">
-                  Your data security is our top priority with enterprise-grade encryption.
+                  Your data security is our top priority with enterprise-grade
+                  encryption.
                 </p>
               </div>
             </div>
