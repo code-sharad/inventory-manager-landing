@@ -1,5 +1,4 @@
 import {
-  BarChart3,
   ShieldCheck,
   Users,
   Zap,
@@ -7,8 +6,6 @@ import {
   Play,
   QrCode,
   Bell,
-  Globe,
-  Smartphone,
   Package,
   MapPin,
   Tag,
