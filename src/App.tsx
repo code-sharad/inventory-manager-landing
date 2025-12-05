@@ -17,6 +17,14 @@ import {
   TrendingUp,
   Scan,
   Box,
+  Layers,
+  Image,
+  FileText,
+  GitBranch,
+  FolderTree,
+  Printer,
+  Settings2,
+  Lock,
 } from "lucide-react";
 
 function App() {
@@ -43,24 +51,12 @@ function App() {
               >
                 Features
               </a>
-              {/* <a */}
-              {/*   href="#pricing" */}
-              {/*   className="text-muted-foreground hover:text-foreground transition-colors" */}
-              {/* > */}
-              {/*   Pricing */}
-              {/* </a> */}
               <a
                 href="#about"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 About
               </a>
-              {/* <a */}
-              {/*   href="#contact" */}
-              {/*   className="text-muted-foreground hover:text-foreground transition-colors" */}
-              {/* > */}
-              {/*   Contact */}
-              {/* </a> */}
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -84,12 +80,9 @@ function App() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
-          {/* Main gradient blob */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-gradient-to-r from-cyan-500/20 via-purple-500/15 to-pink-500/10 rounded-full blur-3xl animate-pulse-slow" />
-          {/* Secondary blobs */}
           <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/10 rounded-full blur-[100px] animate-float" />
           <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] animate-float-delayed" />
-          {/* Grid pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
         </div>
 
@@ -136,7 +129,7 @@ function App() {
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start">
+              <div className="mt-12 flex items-center gap-8 justify-center lg:justify-start flex-wrap">
                 <div className="flex items-center gap-2 text-sm text-gray-400">
                   <CheckCircle2 className="h-4 w-4 text-green-400" />
                   <span>No credit card</span>
@@ -154,13 +147,10 @@ function App() {
 
             {/* Right side - Animated Dashboard Mockup */}
             <div className="relative lg:h-[500px] flex items-center justify-center">
-              {/* Main Dashboard Card */}
               <div className="relative w-full max-w-md">
-                {/* Dashboard container with glow */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl blur-xl" />
 
                 <div className="relative bg-black/60 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl">
-                  {/* Dashboard Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center">
@@ -177,7 +167,6 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 mb-6">
                     <div className="bg-white/5 rounded-xl p-3 border border-white/5 hero-stat-card">
                       <div className="text-2xl font-bold text-white">847</div>
@@ -187,7 +176,7 @@ function App() {
                         <span className="text-xs text-green-400">+12%</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 hero-stat-card" style={{ animationDelay: '0.1s' }}>
+                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 hero-stat-card">
                       <div className="text-2xl font-bold text-white">23</div>
                       <div className="text-xs text-gray-400">Locations</div>
                       <div className="flex items-center gap-1 mt-1">
@@ -195,7 +184,7 @@ function App() {
                         <span className="text-xs text-cyan-400">Active</span>
                       </div>
                     </div>
-                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 hero-stat-card" style={{ animationDelay: '0.2s' }}>
+                    <div className="bg-white/5 rounded-xl p-3 border border-white/5 hero-stat-card">
                       <div className="text-2xl font-bold text-white">5</div>
                       <div className="text-xs text-gray-400">Low Stock</div>
                       <div className="flex items-center gap-1 mt-1">
@@ -205,11 +194,9 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Recent Items List */}
                   <div className="space-y-3">
                     <div className="text-xs text-gray-400 uppercase tracking-wider">Recent Activity</div>
 
-                    {/* Item 1 - Scanning animation */}
                     <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card">
                       <div className="h-10 w-10 rounded-lg bg-cyan-500/20 flex items-center justify-center relative overflow-hidden">
                         <QrCode className="h-5 w-5 text-cyan-400" />
@@ -225,8 +212,7 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Item 2 */}
-                    <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card" style={{ animationDelay: '0.15s' }}>
+                    <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card">
                       <div className="h-10 w-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
                         <Box className="h-5 w-5 text-purple-400" />
                       </div>
@@ -240,8 +226,7 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Item 3 */}
-                    <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card" style={{ animationDelay: '0.3s' }}>
+                    <div className="flex items-center gap-3 bg-white/5 rounded-xl p-3 border border-white/5 hero-item-card">
                       <div className="h-10 w-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
                         <Tag className="h-5 w-5 text-pink-400" />
                       </div>
@@ -257,7 +242,6 @@ function App() {
                   </div>
                 </div>
 
-                {/* Floating QR Scanner Card */}
                 <div className="absolute -left-16 top-1/4 bg-black/70 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-xl animate-float-card hidden lg:block">
                   <div className="flex items-center gap-3">
                     <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center relative overflow-hidden">
@@ -271,7 +255,6 @@ function App() {
                   </div>
                 </div>
 
-                {/* Floating Notification Card */}
                 <div className="absolute -right-12 bottom-1/4 bg-black/70 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-xl animate-float-card-delayed hidden lg:block">
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center animate-bell-ring">
@@ -284,7 +267,6 @@ function App() {
                   </div>
                 </div>
 
-                {/* Floating Stats Badge */}
                 <div className="absolute right-4 -top-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full px-4 py-2 shadow-lg animate-bounce-slow hidden lg:block">
                   <div className="flex items-center gap-2">
                     <TrendingUp className="h-4 w-4 text-white" />
@@ -331,7 +313,6 @@ function App() {
 
       {/* Features Grid */}
       <section id="features" className="py-24 relative overflow-hidden">
-        {/* Background effects */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-1/4 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[120px]" />
@@ -362,93 +343,115 @@ function App() {
 
           {/* Bento Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[180px]">
-            {/* Featured Card - Spans 2 columns */}
-            <div className="md:col-span-2 md:row-span-2 relative group p-8 rounded-3xl bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-transparent border border-white/10 hover:border-cyan-500/30 transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl group-hover:bg-cyan-500/20 transition-all duration-500" />
+            {/* Featured Card - Label Designer */}
+            <div className="md:col-span-2 md:row-span-2 relative group p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent border border-white/10 hover:border-purple-500/30 transition-all duration-500 overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all duration-500" />
               <div className="relative z-10">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/25">
-                  <BarChart3 className="h-7 w-7 text-white" />
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+                  <Printer className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">
-                  Advanced Analytics
+                  Label Designer
                 </h3>
                 <p className="text-gray-400 text-base leading-relaxed max-w-md">
-                  Unlock powerful insights with real-time dashboards, trend
-                  analysis, and AI-powered forecasting to make data-driven
-                  decisions.
+                  Create custom labels with our drag-and-drop designer. Add QR codes, barcodes, text, and logos with precise positioning. Save templates for reuse.
                 </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-cyan-500/20 border border-cyan-500/50" />
-                    <div className="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-500/50" />
-                    <div className="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-500/50" />
-                  </div>
-                  <span className="text-sm text-gray-500">
-                    Used by 500+ teams
-                  </span>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs">Drag & Drop</span>
+                  <span className="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs">QR & Barcode</span>
+                  <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs">Templates</span>
                 </div>
               </div>
             </div>
 
-            {/* Regular Cards */}
             <FeatureCard
-              icon={<Zap className="h-6 w-6 text-yellow-400" />}
-              title="Real-time Tracking"
-              description="Monitor stock levels instantly across all locations."
-              gradient="from-yellow-500/20 via-yellow-500/10 to-transparent"
-              animation="feature-card-realtime"
+              icon={<Settings2 className="h-6 w-6 text-cyan-400" />}
+              title="Custom Fields"
+              description="Define text, number, date, dropdown fields with validation and conditional logic."
+              gradient="from-cyan-500/20 via-cyan-500/10 to-transparent"
             />
+
             <FeatureCard
               icon={<QrCode className="h-6 w-6 text-green-400" />}
               title="QR Code Scanning"
-              description="Quickly scan and manage items with QR codes."
+              description="Generate and print QR labels. Scan to instantly access item details."
               gradient="from-green-500/20 via-green-500/10 to-transparent"
-              animation="feature-card-qr"
-            />
-            <FeatureCard
-              icon={<Users className="h-6 w-6 text-purple-400" />}
-              title="Team Collaboration"
-              description="Manage roles and keep your team synchronized."
-              gradient="from-purple-500/20 via-purple-500/10 to-transparent"
-              animation="feature-card-team"
-            />
-            <FeatureCard
-              icon={<ShieldCheck className="h-6 w-6 text-blue-400" />}
-              title="Enterprise Security"
-              description="SOC 2 compliant with end-to-end encryption."
-              gradient="from-blue-500/20 via-blue-500/10 to-transparent"
-              animation="feature-card-security"
             />
 
-            {/* Wide Card - Spans 2 columns */}
-            <div className="md:col-span-2 relative group p-6 rounded-3xl bg-gradient-to-r from-purple-500/10 via-pink-500/5 to-transparent border border-white/10 hover:border-purple-500/30 transition-all duration-500 overflow-hidden flex items-center gap-6 feature-card-alerts">
-              <div className="feature-icon h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg shadow-purple-500/25 shrink-0">
-                <Bell className="h-7 w-7 text-white" />
+            <FeatureCard
+              icon={<FolderTree className="h-6 w-6 text-orange-400" />}
+              title="Hierarchical Locations"
+              description="Organize with nested locations: Building → Floor → Room → Shelf."
+              gradient="from-orange-500/20 via-orange-500/10 to-transparent"
+            />
+
+            <FeatureCard
+              icon={<Image className="h-6 w-6 text-pink-400" />}
+              title="Media Attachments"
+              description="Upload images and videos. Auto-generated thumbnails and built-in viewer."
+              gradient="from-pink-500/20 via-pink-500/10 to-transparent"
+            />
+
+            {/* Wide Card - Guided Workflows */}
+            <div className="md:col-span-2 relative group p-6 rounded-3xl bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-transparent border border-white/10 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden flex items-center gap-6">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/25 shrink-0">
+                <GitBranch className="h-7 w-7 text-white" />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">
-                  Smart Alerts & Notifications
+                  Guided Workflow Builder
                 </h3>
                 <p className="text-gray-400">
-                  Get instant notifications for low stock, expiring items, and
-                  critical inventory events across all channels.
+                  Create step-by-step data entry workflows with conditional branching. Perfect for complex item types.
                 </p>
               </div>
             </div>
 
             <FeatureCard
-              icon={<Globe className="h-6 w-6 text-teal-400" />}
-              title="Multi-location"
-              description="Manage inventory across warehouses globally."
-              gradient="from-teal-500/20 via-teal-500/10 to-transparent"
-              animation="feature-card-globe"
+              icon={<Users className="h-6 w-6 text-blue-400" />}
+              title="Team Roles"
+              description="Admin, Manager, Contributor, Viewer - control who can access what."
+              gradient="from-blue-500/20 via-blue-500/10 to-transparent"
             />
+
             <FeatureCard
-              icon={<Smartphone className="h-6 w-6 text-orange-400" />}
-              title="Mobile Ready"
-              description="Access your inventory from any device, anywhere."
-              gradient="from-orange-500/20 via-orange-500/10 to-transparent"
-              animation="feature-card-mobile"
+              icon={<Layers className="h-6 w-6 text-yellow-400" />}
+              title="Categories & Types"
+              description="Organize items with hierarchical categories and customizable item types."
+              gradient="from-yellow-500/20 via-yellow-500/10 to-transparent"
+            />
+
+            {/* Wide Card - Multi-Tenancy */}
+            <div className="md:col-span-2 relative group p-6 rounded-3xl bg-gradient-to-r from-indigo-500/10 via-blue-500/5 to-transparent border border-white/10 hover:border-indigo-500/30 transition-all duration-500 overflow-hidden flex items-center gap-6">
+              <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 shrink-0">
+                <Lock className="h-7 w-7 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-1">
+                  Multi-Tenant & Secure
+                </h3>
+                <p className="text-gray-400">
+                  Complete data isolation per organization. Subdomain routing, API key management, and enterprise-grade security.
+                </p>
+              </div>
+              <div className="hidden sm:flex items-center gap-2">
+                <div className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">Isolated Data</div>
+                <div className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs">API Access</div>
+              </div>
+            </div>
+
+            <FeatureCard
+              icon={<FileText className="h-6 w-6 text-slate-400" />}
+              title="Activity Logs"
+              description="Complete audit trail of all changes. Track who did what and when."
+              gradient="from-slate-500/20 via-slate-500/10 to-transparent"
+            />
+
+            <FeatureCard
+              icon={<Zap className="h-6 w-6 text-amber-400" />}
+              title="Real-time Updates"
+              description="Changes sync instantly across all devices and team members."
+              gradient="from-amber-500/20 via-amber-500/10 to-transparent"
             />
           </div>
         </div>
@@ -458,7 +461,6 @@ function App() {
       <section id="about" className="py-24 relative">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Content */}
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
                 <span className="text-sm text-purple-400 font-medium">
@@ -473,32 +475,29 @@ function App() {
               </h2>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 We started InventoryManager with a simple mission: make
-                inventory management effortless for businesses of all sizes. Our
-                team combines decades of supply chain expertise with
-                cutting-edge technology.
+                inventory management effortless for businesses of all sizes.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-1">2019</div>
+                  <div className="text-3xl font-bold text-white mb-1">2024</div>
                   <div className="text-gray-400 text-sm">Founded</div>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-1">50+</div>
+                  <div className="text-3xl font-bold text-white mb-1">15+</div>
                   <div className="text-gray-400 text-sm">Team Members</div>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-1">20+</div>
+                  <div className="text-3xl font-bold text-white mb-1">5+</div>
                   <div className="text-gray-400 text-sm">Countries</div>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-3xl font-bold text-white mb-1">$2M+</div>
+                  <div className="text-3xl font-bold text-white mb-1">$1M+</div>
                   <div className="text-gray-400 text-sm">Saved for Clients</div>
                 </div>
               </div>
             </div>
 
-            {/* Right side - Values */}
             <div className="space-y-6">
               <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-white/10">
                 <div className="h-12 w-12 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-4">
@@ -508,9 +507,7 @@ function App() {
                   Innovation First
                 </h3>
                 <p className="text-gray-400">
-                  We continuously push boundaries with AI-powered insights,
-                  real-time analytics, and intuitive interfaces that make
-                  complex tasks simple.
+                  We continuously push boundaries with powerful features and intuitive interfaces.
                 </p>
               </div>
 
@@ -522,8 +519,7 @@ function App() {
                   Customer Success
                 </h3>
                 <p className="text-gray-400">
-                  Our dedicated support team is available 24/7. We don't just
-                  provide software—we partner with you to ensure your success.
+                  Our dedicated support team is available 24/7 to ensure your success.
                 </p>
               </div>
 
@@ -535,8 +531,7 @@ function App() {
                   Trust & Security
                 </h3>
                 <p className="text-gray-400">
-                  Your data security is our top priority. We're SOC 2 certified
-                  and use enterprise-grade encryption for all your information.
+                  Your data security is our top priority with enterprise-grade encryption.
                 </p>
               </div>
             </div>
@@ -571,19 +566,17 @@ function FeatureCard({
   title,
   description,
   gradient = "from-white/5 to-white/10",
-  animation = "",
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   gradient?: string;
-  animation?: string;
 }) {
   return (
     <div
-      className={`relative group p-6 rounded-2xl bg-gradient-to-br ${gradient} border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 ${animation}`}
+      className={`relative group p-6 rounded-2xl bg-gradient-to-br ${gradient} border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1`}
     >
-      <div className="feature-icon relative h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+      <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
         {icon}
       </div>
       <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
