@@ -1,0 +1,1482 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
+  --breakpoint-5xl: 3840px;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Gradient wave background animation for login page */
+.gradient-wave-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.gradient-wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  opacity: 0.5;
+  border-radius: 40%;
+  animation: wave-rotate 15s linear infinite;
+}
+
+.wave-1 {
+  background: radial-gradient(ellipse at center, #fcea04 0%, transparent 50%);
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  background: radial-gradient(ellipse at center, #ff006a 0%, transparent 50%);
+  animation-duration: 25s;
+  animation-delay: -5s;
+  animation-direction: reverse;
+}
+
+.wave-3 {
+  background: radial-gradient(ellipse at center, #c400ff 0%, transparent 50%);
+  animation-duration: 22s;
+  animation-delay: -10s;
+}
+
+.wave-4 {
+  background: radial-gradient(ellipse at center, #00e6ff 0%, transparent 50%);
+  animation-duration: 18s;
+  animation-delay: -7s;
+  animation-direction: reverse;
+}
+
+@keyframes wave-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Custom Select Dropdown Option Styling - Multiple approaches for cross-browser compatibility */
+.label-designer-select {
+  color-scheme: dark;
+}
+
+.label-designer-select option {
+  background-color: #1f1f1f !important;
+  color: white !important;
+  padding: 8px 12px !important;
+}
+
+.label-designer-select option:hover,
+.label-designer-select option:focus,
+.label-designer-select option:checked:hover,
+.label-designer-select option:active {
+  background-color: #2A3347 !important;
+  background: #2A3347 !important;
+  color: white !important;
+}
+
+/* Try targeting the select when focused */
+.label-designer-select:focus option:hover {
+  background-color: #2A3347 !important;
+  background: #2A3347 !important;
+}
+
+/* Webkit browsers */
+.label-designer-select option:hover::-webkit-option,
+.label-designer-select option:focus::-webkit-option {
+  background-color: #2A3347 !important;
+  background: #2A3347 !important;
+  color: white !important;
+}
+
+/* Firefox specific */
+@supports (-moz-appearance: none) {
+  .label-designer-select option:hover {
+    background-color: #2A3347 !important;
+    color: white !important;
+  }
+}
+
+/* Alternative approach using CSS custom properties */
+.label-designer-select {
+  --select-option-hover-bg: #2A3347;
+  --select-option-bg: #1f1f1f;
+}
+
+/* Custom shadcn Select styling for label designer */
+[data-radix-select-item]:hover {
+  background-color: #2A3347 !important;
+  color: white !important;
+}
+
+[data-radix-select-item][data-highlighted] {
+  background-color: #2A3347 !important;
+  color: white !important;
+}
+
+/* More specific targeting for the select items */
+.radix-select-item-hover {
+  background-color: #2A3347 !important;
+  color: white !important;
+}
+
+/* Remove focus rings on click for select elements */
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus rings on click for input elements */
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus rings on click for button elements */
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #111827;
+  border-radius: 6px;
+  border: 1px solid #374151;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4B5563;
+  border-radius: 6px;
+  border: 1px solid #6B7280;
+  min-height: 40px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6B7280;
+  border-color: #9CA3AF;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #9CA3AF;
+}
+
+/* Cyber Checkbox Styles */
+.cyber-checkbox {
+  --checkbox-size: 24px;
+  --checkbox-color: #6b7280;
+  --checkbox-check-color: #ffffff;
+  --checkbox-hover-color: #9ca3af;
+  --checkbox-spark-offset: -20px;
+}
+
+/* Item Checkbox - 15% smaller than the default */
+.item-cyber-checkbox {
+  --checkbox-size: 20.52px; /* 21.6px reduced by 5% more (total 15% reduction from original 24px) */
+  --checkbox-color: #6b7280;
+  --checkbox-check-color: #ffffff;
+  --checkbox-hover-color: #9ca3af;
+  --checkbox-spark-offset: -17.1px; /* Also scaled down by 5% more */
+
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cyber-checkbox input {
+  display: none;
+}
+
+.cyber-checkbox__mark {
+  position: relative;
+  display: inline-block;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+}
+
+.cyber-checkbox__box {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--checkbox-color);
+  border-radius: 4px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.cyber-checkbox__check {
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  stroke: var(--checkbox-check-color);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.cyber-checkbox__effects {
+  position: absolute;
+  inset: var(--checkbox-spark-offset);
+  pointer-events: none;
+}
+
+.cyber-checkbox__spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: var(--checkbox-color);
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: center center;
+}
+
+/* Hover */
+.cyber-checkbox:hover .cyber-checkbox__box {
+  border-color: var(--checkbox-hover-color);
+  box-shadow: 0 0 0 2px rgba(92, 103, 255, 0.1);
+}
+
+/* Checked */
+.cyber-checkbox input:checked + .cyber-checkbox__mark .cyber-checkbox__box {
+  background: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+}
+
+.cyber-checkbox input:checked + .cyber-checkbox__mark .cyber-checkbox__check {
+  transform: scale(1);
+}
+
+/* Spark Animation */
+.cyber-checkbox input:checked + .cyber-checkbox__mark .cyber-checkbox__spark {
+  animation: spark 0.4s ease-out;
+}
+
+.cyber-checkbox__spark:nth-child(1) {
+  transform: rotate(0deg) translateX(var(--checkbox-spark-offset));
+}
+.cyber-checkbox__spark:nth-child(2) {
+  transform: rotate(90deg) translateX(var(--checkbox-spark-offset));
+}
+.cyber-checkbox__spark:nth-child(3) {
+  transform: rotate(180deg) translateX(var(--checkbox-spark-offset));
+}
+.cyber-checkbox__spark:nth-child(4) {
+  transform: rotate(270deg) translateX(var(--checkbox-spark-offset));
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg) translateX(var(--checkbox-spark-offset));
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(0deg)
+      translateX(calc(var(--checkbox-spark-offset) * 1.5));
+  }
+}
+
+/* Active */
+.cyber-checkbox:active .cyber-checkbox__box {
+  transform: scale(0.9);
+}
+
+/* Focus */
+.cyber-checkbox input:focus + .cyber-checkbox__mark .cyber-checkbox__box {
+  box-shadow: 0 0 0 4px rgba(92, 103, 255, 0.2);
+}
+
+.cyber-checkbox__particles {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+}
+
+.cyber-checkbox__particles div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--checkbox-color);
+  opacity: 0;
+}
+
+/* Particle animations for check */
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-1 {
+  animation: particle-1 0.4s ease-out forwards;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-2 {
+  animation: particle-2 0.4s ease-out forwards 0.1s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-3 {
+  animation: particle-3 0.4s ease-out forwards 0.15s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-4 {
+  animation: particle-4 0.4s ease-out forwards 0.05s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-5 {
+  animation: particle-5 0.4s ease-out forwards 0.12s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-6 {
+  animation: particle-6 0.4s ease-out forwards 0.08s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-7 {
+  animation: particle-7 0.4s ease-out forwards 0.18s;
+}
+.cyber-checkbox input:checked + .cyber-checkbox__mark .particle-8 {
+  animation: particle-8 0.4s ease-out forwards 0.15s;
+}
+
+/* Particle animations for uncheck */
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-1 {
+  animation: particle-out-1 0.4s ease-out forwards;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-2 {
+  animation: particle-out-2 0.4s ease-out forwards 0.1s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-3 {
+  animation: particle-out-3 0.4s ease-out forwards 0.15s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-4 {
+  animation: particle-out-4 0.4s ease-out forwards 0.05s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-5 {
+  animation: particle-out-5 0.4s ease-out forwards 0.12s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-6 {
+  animation: particle-out-6 0.4s ease-out forwards 0.08s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-7 {
+  animation: particle-out-7 0.4s ease-out forwards 0.18s;
+}
+.cyber-checkbox input:not(:checked) + .cyber-checkbox__mark .particle-8 {
+  animation: particle-out-8 0.4s ease-out forwards 0.15s;
+}
+
+/* Particle keyframes for check */
+@keyframes particle-1 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, -20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-2 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(20px, -20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-3 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(20px, 20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-4 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-5 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-30px, 0px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-6 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(30px, 0px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-7 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px, -30px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-8 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0px, 30px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Particle keyframes for uncheck */
+@keyframes particle-out-1 {
+  0% {
+    transform: translate(-20px, -20px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-2 {
+  0% {
+    transform: translate(20px, -20px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-3 {
+  0% {
+    transform: translate(20px, 20px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-4 {
+  0% {
+    transform: translate(-20px, 20px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-5 {
+  0% {
+    transform: translate(-30px, 0px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-6 {
+  0% {
+    transform: translate(30px, 0px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-7 {
+  0% {
+    transform: translate(0px, -30px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-out-8 {
+  0% {
+    transform: translate(0px, 30px) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Custom button style for btn-31 */
+.btn-31,
+.btn-31 *,
+.btn-31 :after,
+.btn-31 :before,
+.btn-31:after,
+.btn-31:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-31 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-31:disabled {
+  cursor: default;
+}
+
+.btn-31:-moz-focusring {
+  outline: auto;
+}
+
+.btn-31 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-31 [hidden] {
+  display: none;
+}
+
+.btn-31 {
+  border-width: 1px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+}
+
+.btn-31:before {
+  --progress: 100%;
+  background: #fff;
+  -webkit-clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  clip-path: polygon(
+    100% 0,
+    var(--progress) var(--progress),
+    0 100%,
+    100% 100%
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  transition: -webkit-clip-path 0.2s ease;
+  transition: clip-path 0.2s ease;
+  transition: clip-path 0.2s ease, -webkit-clip-path 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+.btn-31:hover:before {
+  --progress: 0%;
+}
+
+.btn-31 .text-container {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn-31 .text {
+  display: block;
+  font-weight: normal;
+  mix-blend-mode: difference;
+  position: relative;
+}
+
+.btn-31:hover .text {
+  -webkit-animation: move-up-alternate 0.3s ease forwards;
+  animation: move-up-alternate 0.3s ease forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes move-up-alternate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(80%);
+  }
+
+  51% {
+    transform: translateY(-80%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Hide default browser spinner buttons on number inputs */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar,
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Custom scrollbar with no arrows */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(150, 150, 150, 0.5);
+    border-radius: 20px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.8);
+  }
+
+  /* Hide scrollbar buttons/arrows */
+  .scrollbar-thin::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* Grid pattern background */
+  .bg-grid-white {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+
+  .bg-grid-dark {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  }
+
+  /* Custom dropdown arrow background */
+  .bg-dropdown-arrow {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+  }
+
+  /* Animation for list item lateral slide */
+  .hover-slide-animation {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-slide-animation:hover {
+    transform: translateX(-15px);
+  }
+}
+
+/* Dropdown with gap styling */
+.dropdown-with-gap {
+  /* Add a small gap between the select trigger and dropdown menu */
+  /* Note: Native select elements have limited customization options */
+  /* This creates a visual gap effect when the dropdown opens */
+}
+
+/* Webkit browsers - attempt to style the dropdown */
+.dropdown-with-gap:focus {
+  /* Add slight margin to create visual separation */
+  margin-bottom: 2px;
+  transition: margin-bottom 0.1s ease;
+}
+
+/* Firefox - attempt to add gap */
+@-moz-document url-prefix() {
+  .dropdown-with-gap option {
+    padding-top: 2px;
+  }
+
+  .dropdown-with-gap option:first-child {
+    margin-top: 2px;
+  }
+}
+
+/* Timeline editor styles */
+.react-timeline-editor {
+  --border-color: rgba(255, 255, 255, 0.15);
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --cursor-color: rgba(164, 98, 255, 0.9);
+  --action-background: rgba(164, 98, 255, 0.4);
+  --action-background-selected: rgba(164, 98, 255, 0.6);
+  --action-border: #a462ff;
+  --time-scale-background: rgba(24, 24, 27, 0.9);
+  --row-background: rgba(30, 30, 35, 0.5);
+  --row-background-selected: rgba(38, 38, 45, 0.7);
+}
+
+/* Override default timeline editor styles */
+.react-timeline-editor .editor-scroll-container {
+  background-color: #18181b; /* bg-zinc-900 */
+}
+
+.react-timeline-editor .action-item {
+  box-shadow: 0 0 0 1px var(--action-border);
+  background-color: var(--action-background);
+  border-radius: 3px;
+}
+
+.react-timeline-editor .action-item.selected {
+  background-color: var(--action-background-selected);
+}
+
+.react-timeline-editor .timeline-cursor {
+  background-color: var(--cursor-color);
+}
+
+.react-timeline-editor .scale-container {
+  background-color: var(--time-scale-background);
+}
+
+.react-timeline-editor .row-item {
+  border-color: var(--border-color);
+  background-color: var(--row-background);
+}
+
+.react-timeline-editor .row-item.selected {
+  background-color: var(--row-background-selected);
+}
+
+.react-timeline-editor .editor-grid {
+  border-color: var(--border-color);
+}
+
+.react-timeline-editor .editor-grid-line {
+  background-color: var(--grid-color);
+}
+
+:root {
+      --background: 0 0% 100%;
+--foreground: 20 14.3% 4.1%;
+--muted: 60 4.8% 95.9%;
+--muted-foreground: 25 5.3% 44.7%;
+--popover: 0 0% 100%;
+--popover-foreground: 20 14.3% 4.1%;
+--card: 0 0% 100%;
+--card-foreground: 20 14.3% 4.1%;
+--border: 20 5.9% 90%;
+--input: 0 0% 12%;
+--primary: 0 85% 43%;
+--primary-foreground: 211 100% 99%;
+--secondary: 60 4.8% 95.9%;
+--secondary-foreground: 24 9.8% 10%;
+--accent: 60 4.8% 95.9%;
+--accent-foreground: 24 9.8% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 60 9.1% 97.8%;
+--ring: 20 14.3% 4.1%;
+--radius: 0.5rem;
+--bg-color: #FFFFFF;
+  }
+  .dark {
+      --background: 0 0% 0%;
+--foreground: 0 0% 98%;
+--muted: 0 0% 15%;
+--muted-foreground: 0 0% 60%;
+--popover: 270 50% 15%;
+--popover-foreground: 0 0% 98%;
+--card: 0 0% 12%;
+--card-foreground: 0 0% 98%;
+--border: 0 0% 20%;
+--input: 0 0% 15%;
+--primary: 187 85% 43%;
+--primary-foreground: 0 0% 100%;
+--secondary: 0 0% 45%;
+--secondary-foreground: 0 0% 98%;
+--accent: 270 70% 60%;
+--accent-foreground: 0 0% 100%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--ring: 187 85% 43%;
+--radius: 0.5rem;
+--bg-color: #000000;
+  }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Glowing gradient button style */
+.gradient-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  transition: all 0.02s;
+  font-weight: normal;
+  cursor: pointer;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+  background: #1f1f1f;
+  color: white;
+}
+
+.gradient-button:hover {
+  color: rgb(33, 0, 85);
+}
+
+.gradient-button:active {
+  transform: scale(0.97);
+}
+
+.gradient-button .hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.gradient-button .hoverEffect div {
+  background: rgb(222, 0, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 0, 75, 1) 0%,
+    rgba(191, 70, 255, 1) 49%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.gradient-button:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
+}
+
+.gradient-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradient border button style */
+.btn-gradient-border {
+  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
+  --border-width: 0.125em;
+  --blur: 30px;
+  --bg: #000000;
+  --color: #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  /* use position: relative; so that BG is only for .btn */
+  position: relative;
+  isolation: isolate;
+  display: inline-grid;
+  place-content: center;
+  padding: 0.5em 1.5em;
+  font-size: 14px;
+  font-weight: normal;
+  border: 0;
+  text-transform: none;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  transition: color 250ms;
+}
+
+.btn-gradient-border::after,
+.btn-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.btn-gradient-border::before {
+  background: var(--border-color);
+  background-size: 300% 300%;
+  animation: move-bg7234 5s ease infinite;
+  z-index: -2;
+  border-radius: 0.375rem;
+}
+
+@keyframes move-bg7234 {
+  0% {
+    background-position: 31% 0%;
+  }
+
+  50% {
+    background-position: 70% 100%;
+  }
+
+  100% {
+    background-position: 31% 0%;
+  }
+}
+
+.btn-gradient-border::after {
+  background: var(--bg);
+  z-index: -1;
+  border-radius: 0.275rem;
+  inset: var(--border-width);
+  transform-origin: right;
+  transition: transform 300ms ease;
+  transform: scaleX(1);
+}
+
+.btn-gradient-border:where(:hover, :focus)::after {
+  transform: scaleX(0);
+  transition: transform 300ms ease;
+}
+
+.btn-gradient-border:where(:hover, :focus) {
+  color: #fff;
+}
+
+.btn-gradient-border[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@layer components {
+  /* Gradient stroke effect - can be applied to any container */
+  .gradient-stroke,
+  .gradient-border-card {
+    @apply relative border-0 rounded-lg;
+    padding: 2px;
+    background: linear-gradient(45deg, #ffae00, #7e03aa, #00fffb);
+    background-size: 300% 300%;
+    animation: gradient-animation 5s ease infinite;
+  }
+
+  /* Static version of gradient stroke for users page */
+  .gradient-stroke-static,
+  .users-page-card {
+    @apply relative border-0;
+    padding: 2px;
+    background: linear-gradient(45deg, #ffae00, #7e03aa, #00fffb);
+    background-size: 300% 300%;
+    /* No animation */
+    border-radius: 0.5rem !important;
+  }
+
+  /* Card specifics for users page */
+  /* .users-page-card {
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+  } - merged above */
+
+  /* For elements that should have black fill within gradient stroke */
+  .gradient-stroke-dark > *,
+  .gradient-border-card > *,
+  .users-page-card > * {
+    background-color: #000000;
+    margin: 0;
+    height: 100%;
+    color: white;
+  }
+
+  /* Ensure proper nesting for Card components */
+  .gradient-stroke-dark > div > .CardHeader,
+  .gradient-stroke-dark > div > [class*='CardHeader'],
+  .gradient-border-card > div > .CardHeader,
+  .gradient-border-card > div > [class*='CardHeader'],
+  .users-page-card > div > .CardHeader,
+  .users-page-card > div > [class*='CardHeader'] {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+  }
+
+  .gradient-stroke-dark > div > .CardContent,
+  .gradient-stroke-dark > div > [class*='CardContent'],
+  .gradient-border-card > div > .CardContent,
+  .gradient-border-card > div > [class*='CardContent'],
+  .users-page-card > div > .CardContent,
+  .users-page-card > div > [class*='CardContent'] {
+    border-radius: 0 0 0.5rem 0.5rem !important;
+  }
+
+  /* Backward compatibility for existing gradient-border-card usage */
+  /* .gradient-border-card {
+    @apply gradient-stroke gradient-stroke-dark;
+  } - removed */
+
+  /* Static version for users page */
+  /* .users-page-card {
+    @apply gradient-stroke-static gradient-stroke-dark;
+  } - removed */
+
+  /* Make card content have rounded bottom corners */
+  .CardContent,
+  [class*='CardContent'] {
+    border-radius: 0 0 0.5rem 0.5rem !important;
+    background-color: #000000;
+  }
+
+  /* Make card header have rounded top corners */
+  .CardHeader,
+  [class*='CardHeader'] {
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    background-color: #000000;
+  }
+
+  /* Make table elements in gradient cards have black background */
+  .gradient-stroke-dark table,
+  .gradient-stroke-dark thead,
+  .gradient-stroke-dark tbody,
+  .gradient-stroke-dark tr,
+  .gradient-stroke-dark th,
+  .gradient-stroke-dark td {
+    background-color: #000000;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Dialog input field styling */
+  .dialog-input,
+  .DialogContent input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+  .DialogContent textarea,
+  .DialogContent select {
+    @apply bg-[#1f1f1f] hover:border-red-500 hover:border focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  /* Toggle switch styling */
+  .toggle-switch-track {
+    @apply absolute inset-0 rounded-full bg-[#1f1f1f] transition peer-checked:bg-primary;
+  }
+
+  .toggle-switch-thumb {
+    @apply absolute inset-y-1 left-1 aspect-square h-4 rounded-full bg-white transition peer-checked:left-5;
+  }
+
+  /* Print styles */
+  @media print {
+    body {
+      background: white;
+      color: black;
+    }
+
+    /* Hide everything by default when printing */
+    body > *:not(.print-section) {
+      display: none !important;
+    }
+
+    /* Make the print section visible */
+    .print-section {
+      display: block !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      z-index: 9999;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Hide non-printable elements */
+    .print-hide,
+    button,
+    .DialogOverlay,
+    .DialogContent > button,
+    nav,
+    header,
+    footer {
+      display: none !important;
+    }
+
+    /* Style for the printable content */
+    .print-section .barcode-container,
+    .print-section .qr-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: white;
+    }
+
+    /* Make images render properly */
+    .print-section img,
+    .print-section svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Center the item info */
+    .print-section .item-info {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+
+  .red-border-hover:hover {
+    border-color: #ef4444 !important;
+    border-width: 1px !important;
+  }
+
+  .menu-button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+
+  .inventory-card:hover .menu-button {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Delete animation styles */
+  @keyframes delete-animation {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    20% {
+      opacity: 0.8;
+      transform: scale(0.95) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5) translateY(40px);
+    }
+  }
+
+  .delete-item-animation {
+    animation: delete-animation 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+    pointer-events: none;
+  }
+
+  /* Gradient stroke on hover only - appears only when element is hovered */
+  .gradient-stroke-hover {
+    position: relative;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .gradient-stroke-hover:hover {
+    border: none !important;
+    box-shadow: 0 0 0 1px transparent;
+  }
+
+  .gradient-stroke-hover:hover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: 0.5rem;
+    background: linear-gradient(45deg, #ffae00, #7e03aa, #00fffb);
+    background-size: 300% 300%;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: gradient-animation 5s ease infinite;
+    z-index: 10;
+  }
+
+  /* Clean styling for inventory cards - no border effect, just the bounce animation */
+  .inventory-card-gradient {
+    position: relative;
+    border-radius: 0.5rem;
+  }
+
+  /* Font sizes for card titles in users page */
+  .card-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  /* Completely prevent style changes on badge hover by disabling pointer events */
+  .static-badge {
+    cursor: default !important;
+    pointer-events: none !important;
+  }
+
+  /* Video Trimming Slider - iMovie Style */
+  .trim-slider [data-orientation=horizontal] [role=slider]:first-child {
+    width: 4px;
+    height: 24px;
+    border-radius: 1px;
+    background-color: #3b82f6;
+    border-right: 2px solid white;
+    margin-left: -2px;
+  }
+
+  .trim-slider [data-orientation=horizontal] [role=slider]:last-child {
+    width: 4px;
+    height: 24px;
+    border-radius: 1px;
+    background-color: #3b82f6;
+    border-left: 2px solid white;
+    margin-right: -2px;
+  }
+
+  /* Make the slider track thicker */
+  .trim-slider [data-orientation=horizontal] {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Active/selected area */
+  .trim-slider [data-orientation=horizontal] > div {
+    background-color: #3b82f6;
+    border-radius: 0;
+  }
+}
+
