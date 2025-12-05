@@ -14,9 +14,9 @@ function App() {
   const MAIN_APP_URL = "http://localhost:5000";
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden scroll-smooth">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm">
+      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
@@ -63,11 +63,9 @@ function App() {
             </a>
             <a
               href={`${MAIN_APP_URL}/login`}
-              className="relative inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 p-[1px] font-medium text-white transition-all hover:opacity-90"
+              className="px-4 py-2 text-sm font-medium rounded-md bg-cyan-500 text-black hover:bg-cyan-400 transition-all"
             >
-              <span className="rounded-lg bg-black px-4 py-2 text-sm transition-all hover:bg-black/80">
-                Get Started
-              </span>
+              Get Started
             </a>
           </div>
         </div>
@@ -81,13 +79,19 @@ function App() {
         </div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 border border-border mb-8 animate-in fade-in duration-500">
-            <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-sm text-muted-foreground">
-              Now with AI-powered Insights
+          <a
+            href="#features"
+            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 animate-in fade-in duration-500 hover:bg-white/10 transition-colors group"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
             </span>
-            <ArrowRight className="h-4 w-4 text-muted-foreground" />
-          </div>
+            <span className="text-sm text-gray-300">
+              Free 14-day trial • No credit card required
+            </span>
+            <ArrowRight className="h-4 w-4 text-gray-400 group-hover:translate-x-0.5 transition-transform" />
+          </a>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
             Transform Your
@@ -105,19 +109,12 @@ function App() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-12 duration-1000">
             <a
               href={`${MAIN_APP_URL}/login`}
-              className="relative h-12 px-8 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 p-[1px] font-medium text-white transition-all hover:opacity-90"
+              className="gradient-border-btn gap-2"
             >
-              <span className="flex items-center gap-2 rounded-lg bg-black px-7 py-2.5 transition-all hover:bg-black/80">
-                Get Started Free <ArrowRight className="h-5 w-5" />
-              </span>
+              Get Started Free <ArrowRight className="h-5 w-5" />
             </a>
-            <a
-              href="#"
-              className="relative h-12 px-8 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400 p-[1px] font-medium text-white transition-all hover:opacity-90"
-            >
-              <span className="flex items-center gap-2 rounded-lg bg-black px-7 py-2.5 transition-all hover:bg-black/80">
-                <Play className="h-4 w-4" /> View Demo
-              </span>
+            <a href="#" className="gradient-border-btn gap-2">
+              <Play className="h-4 w-4" /> View Demo
             </a>
           </div>
         </div>
